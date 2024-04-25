@@ -1,11 +1,11 @@
 # drone-matrixchat-notify
 
-[![MIT License](https://img.shields.io/github/license/SpotlightKid/drone-matrixchat-notify?label=License)](https://github.com/SpotlightKid/drone-matrixchat-notify/blob/master/LICENSE)
-[![GitHub tag (with filter)](https://img.shields.io/github/v/tag/SpotlightKid/drone-matrixchat-notify?filter=v*.*.*&logo=github&label=Latest%20version)](https://github.com/SpotlightKid/drone-matrixchat-notify/tags)
-[![Docker image version](https://img.shields.io/docker/v/spotlightkid/drone-matrixchat-notify?logo=docker&label=Docker+image)](https://hub.docker.com/r/spotlightkid/drone-matrixchat-notify)
-[![GitHub stars](https://img.shields.io/github/stars/SpotlightKid/drone-matrixchat-notify?logo=github&label=GitHub)](https://github.com/SpotlightKid/drone-matrixchat-notify)
-[![GitLab stars](https://img.shields.io/gitlab/stars/SpotlightKid%2Fdrone-matrixchat-notify?logo=gitlab&label=GitLab)](https://gitlab.com/SpotlightKid/drone-matrixchat-notify)
-[![GitHub issues](https://img.shields.io/github/issues/SpotlightKid/drone-matrixchat-notify?logo=github&label=Issues)](https://github.com/SpotlightKid/drone-matrixchat-notify/issues)
+[![MIT License](https://img.shields.io/github/license/yitsushi/drone-matrixchat-notify?label=License)](https://github.com/yitsushi/drone-matrixchat-notify/blob/master/LICENSE)
+[![GitHub tag (with filter)](https://img.shields.io/github/v/tag/yitsushi/drone-matrixchat-notify?filter=v*.*.*&logo=github&label=Latest%20version)](https://github.com/yitsushi/drone-matrixchat-notify/tags)
+[![Docker image version](https://img.shields.io/docker/v/yitsushi/drone-matrixchat-notify?logo=docker&label=Docker+image)](https://hub.docker.com/r/yitsushi/drone-matrixchat-notify)
+[![GitHub stars](https://img.shields.io/github/stars/yitsushi/drone-matrixchat-notify?logo=github&label=GitHub)](https://github.com/yitsushi/drone-matrixchat-notify)
+[![GitLab stars](https://img.shields.io/gitlab/stars/yitsushi%2Fdrone-matrixchat-notify?logo=gitlab&label=GitLab)](https://gitlab.com/yitsushi/drone-matrixchat-notify)
+[![GitHub issues](https://img.shields.io/github/issues/yitsushi/drone-matrixchat-notify?logo=github&label=Issues)](https://github.com/yitsushi/drone-matrixchat-notify/issues)
 
 A [drone.io] [plugin] to send notifications to Matrix chat rooms from CI
 pipeline steps. Supports *Jinja* message templates and *Markdown* rendering.
@@ -24,7 +24,7 @@ steps:
   - ./build
 
 - name: notify
-  image: spotlightkid/drone-matrixchat-notify
+  image: yitsushi/drone-matrixchat-notify
   settings:
     homeserver: 'https://matrix.org'
     roomid: '!xxxxxx@matrix.org'
@@ -137,10 +137,13 @@ steps:
     See this [reference] for environment variables available in drone.io CI
     pipelines.
 
+* `msgtype` *(default:* `m.notice`*)*
+
+    Type of the message.
 
 
-[`DEFAULT_ALLOWED_ATTRS`]: https://github.com/SpotlightKid/drone-matrixchat-notify/blob/master/matrixchat-notify.py#L28
-[`DEFAULT_ALLOWED_TAGS`]: https://github.com/SpotlightKid/drone-matrixchat-notify/blob/master/matrixchat-notify.py#L35
+[`DEFAULT_ALLOWED_ATTRS`]: https://github.com/yitsushi/drone-matrixchat-notify/blob/master/matrixchat-notify.py#L28
+[`DEFAULT_ALLOWED_TAGS`]: https://github.com/yitsushi/drone-matrixchat-notify/blob/master/matrixchat-notify.py#L35
 [allowed attributes]: https://bleach.readthedocs.io/en/latest/clean.html#allowed-attributes-attributes
 [drone.io]: https://drone.io/
 [jinja]: https://jinja.palletsprojects.com/

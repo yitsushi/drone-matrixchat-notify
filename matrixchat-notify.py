@@ -116,6 +116,7 @@ async def send_notification(config, message):
     token = config.get("accesstoken")
     device_id = config.get("deviceid")
     homeserver = config.get("homeserver", DEFAULT_HOMESERVER)
+    msgtype = config.get("msgtype")
 
     client = AsyncClient(homeserver, config["userid"])
     log.debug("Created AsyncClient: %r", client)
@@ -139,7 +140,7 @@ async def send_notification(config, message):
             return
 
     if isinstance(message, dict):
-        message.setdefault("msgtype", "m.notice")
+        message.setdefault("msgtype", msgtype)
         resp = await client.room_send(
             config["roomid"], message_type="m.room.message", content=message
         )
@@ -147,7 +148,7 @@ async def send_notification(config, message):
         resp = await client.room_send(
             config["roomid"],
             message_type="m.room.message",
-            content={"msgtype": "m.notice", "body": message},
+            content={"msgtype": msgtype, "body": message},
         )
 
     log.info(
