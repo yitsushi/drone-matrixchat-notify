@@ -24,7 +24,7 @@ steps:
   - ./build
 
 - name: notify
-  image: yitsushi/drone-matrixchat-notify
+  image: ghcr.io/yitsushi/drone-matrixchat-notify
   settings:
     homeserver: 'https://matrix.org'
     roomid: '!xxxxxx@matrix.org'
