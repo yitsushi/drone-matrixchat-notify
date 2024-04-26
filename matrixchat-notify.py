@@ -82,6 +82,7 @@ SETTINGS_KEYS = (
     "roomid",
     "template",
     "userid",
+    "msgtype",
 )
 log = logging.getLogger(PROG)
 
